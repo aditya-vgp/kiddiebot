@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KiddieBot</title>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap CDNs -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<!-- To include the Favicon -->
+<link rel="icon" href="npc.png" type="image/x-icon">
+<!-- To include Fontawesome -->
+<script
+      src="https://kit.fontawesome.com/8e66b110d2.js"
+      crossorigin="anonymous"
+    ></script>
+<style>
+    #bgcard{
+        box-shadow: 10px 10px 20px black;
+    }
+    #asocial {
+  text-decoration: none;
+  color: white;
+}
+#footer {
+  background-color: black;
+  color: rgb(163, 163, 163);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+ul {
+    color: rgb(39, 37, 37);
+}
+</style>
+</head>
+<body style="background-image: url('https://cdn.wallpapersafari.com/48/2/a5yRh3.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: scroll; position: absolute;">
+<form>
+<!-- Card Starts -->
+<h1 class="p-4 my-4" align="center"><span class="text-white">Ｋｉｄｄｉｅ<span class="text-danger">Ｂｏｔ</span></span></h1>
+<div id="bgcard" class="card container-fluid" style="width: 30rem;" align="center">
+    <img src="https://i.giphy.com/media/TCeonFVS8wB4aXovvo/giphy.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+        <div id = "chatbox" align="center">
+            <p class="card-text text-secondary fs-4 pt-4 pb-2">Hello there, I'm Kiddie<span class="text-danger">Bot </span><br></p>
+            </div>
+    </div>
+
+    <div id = "userInput" align="center">
+        <input class="form-control shadow" id ="textInput" type ="text" name="msg" placeholder="" style="text-align: center;">
+        <input class="btn btn-success btn-lg my-4 px-5" id = "buttonInput" type = "submit" value="Send ⮚">
+    </div>
+  </div>
+
+<!-- Card Stops -->
+<div align="center">
+
+<script>
+function getBotResponse(){
+var rawText = $("#textInput").val();
+var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
+$("#textInput").val("");
+$("#chatbox").append(userHtml);
+document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
+$.get("/get", {msg:rawText }).done(function(data) {
+var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
+$("#chatbox").append(botHtml);
+document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});
+});
+}
+$("#textInput").keypress(function(e) {
+if(e.which == 13) {
+getBotResponse();
+}
+});
+$("#buttonInput").click(function() {
+getBotResponse();
+})
+</script>
+
+</div>
+<!-- Random Information -->
+<!-- Reach us -->
+<div class="container-fluid bg-dark embed-responsive mt-5">
+    <div class="row justify-content-evenly px-2 pt-3 pb-4">
+      <h5 class="display-6 text-center mt-2 mb-1 text-secondary">Kiddie<span class="text-danger">Bot</span></h5>
+      <br><br>
+      <div
+        class="col-md-3 col-sm-5 mt-2 text-white"
+        style="text-align: justify"
+      >
+        <p class="mt-3 mb-2"><strong>Kiddie<span class="text-danger">Bot</span></strong> <i class="fa-sharp fa-solid fa-robot text-secondary"></i></p>
+        <br>
+        <p class="text-secondary">
+            In the past few years, chatbots have become wildly popular in the tech and business sectors. These intelligent bots are so adept at imitating natural human languages and conversing with humans, that companies across various industrial sectors are adopting them. It can also be used to train individuals based on a given set of conversation scenarios. 
+            <br><br>
+            This project is developed to help the kids of younger generation the importance of communication skills and help train them to develop their social interacting abilities.
+        </p>
+      </div>
+      <div class="col-md-2 col-sm-5 mt-2 mb-2 text-white">
+        <p class="mt-3 mb-2"><strong>Socials </strong><i class="fa-sharp fa-solid fa-globe text-secondary"></i></p>
+        <br>
+        <ul>
+          <li>
+            <a id="asocial" href="https://www.facebook.com/" target="_blank"
+              ><i class="fa-brands fa-facebook text-primary"></i> Facebook</a
+            >
+          </li>
+          <li>
+            <a id="asocial" href="https://www.instagram.com/" target="_blank"
+              ><i class="fa-brands fa-instagram text-danger"></i> Instagram</a
+            >
+          </li>
+          <li>
+            <a id="asocial" href="https://twitter.com/" target="_blank"
+              ><i class="fa-brands fa-twitter text-info"></i> Twitter</a
+            >
+          </li>
+          <li>
+            <a
+              id="asocial"
+              href="https://www.tumblr.com/login"
+              target="_blank"
+              ><i class="fa-brands fa-tumblr text-success"></i> Tumbler</a
+            >
+          </li>
+          <li>
+            <a
+              id="asocial"
+              href="https://in.pinterest.com/login/"
+              target="_blank"
+              ><i class="fa-brands fa-pinterest text-danger"></i> Pinterest</a
+            >
+          </li>
+          <li>
+            <a id="asocial" href="https://discord.com/" target="_blank"
+              ><i class="fa-brands fa-discord text-primary"></i> Discord</a
+            >
+          </li>
+        </ul>
+        </div>
+      <div class="col-md-6 col-sm-12 mt-2 mb-2 text-white">
+        <p class="mt-3 mb-2"><strong>FAQ</strong></p>
+       <br>
+       <div class="accordion bg-dark text-white" id="accordionExample">
+        <div class="accordion-item bg-dark text-secondary">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What are chatbots?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>A chatbot or chatterbot is a software application used to conduct an on-line chat conversation via text or text-to-speech, in lieu of providing direct contact with a live human agent. Designed to convincingly simulate the way a human would behave as a conversational partner, chatbot systems typically require continuous tuning and testing, and many in production remain unable to adequately converse, while none of them can pass the standard Turing test. The term "ChatterBot" was originally coined by Michael Mauldin (creator of the first Verbot) in 1994 to describe these conversational programs.. <a href="https://en.wikipedia.org/wiki/Chatbot" target="_blank" style="text-decoration: none;">read more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark text-secondary">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What information sources will the chatbot use?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>In order for a chatbot to function properly, it is crucial for the programme to access your business data, whether from your existing knowledge base, website, internal databases, existing documents, reservation systems, shipping information, product inventories or other sources of information.
+            <br><br>
+                Once you have determined which data sources will be needed to answer the question asked, you can identify how the bot will access each source in order to interact with the user in a meaningful way. Will you need to make your existing sources available? Is there an open API you can use?</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark text-secondary">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                What kinds of questions should the chatbot be able to answer?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>Chatbots are designed to respond to the most frequent customer requests and use cases. It is important to focus on mastering these questions before adding new functions and conversations later on.
+
+                Remember to list all the common questions and prioritise them with regard to the volume and complexity of each required response.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+  
+  <!-- Footer Section -->
+  <div id="footer" class="container-fluid">
+    <div class="row justify-content-evenly px-2 pt-3">
+      <div class="col-sm-12">
+        <p class="text-center">© <span class="text-success">2022 Copyright: </span>Kiddie<span class="text-danger">Bot</span> - AVGP</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+

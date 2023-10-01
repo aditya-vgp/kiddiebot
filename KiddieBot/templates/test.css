@@ -1,0 +1,20 @@
+#bgimg {
+    background-image: url("/templates/pngtree-aesthetic-plain-background-with-pastel-colors-picture-image_1596087.jpg");
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+    background-size: cover;
+}
+#asocial {
+    text-decoration: none;
+    color: white;
+  }
+li{
+    color: rgb(39, 38, 38);
+}
+#footer {
+    background-color: black;
+    color: rgb(163, 163, 163);
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
